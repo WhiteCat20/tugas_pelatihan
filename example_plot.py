@@ -2,26 +2,32 @@
 
 """
 Identitas:
-Nama: Achmadi S.T. M.T.
-Email: mekatronik.achmadi@gmail.com
+Nama: Muhammad Faiz Rahmadani
+Email: fzrahmadan@gmail.com
+Penjelasan : berikut adalah program yang menunjukan grafik pada kelipatan angka dua, tiga dan empat. Program ini menggunakan numpy untuk meng-generate array, dan menggunakan pyplot dari matplotlib untuk menghasilkan grafik
 """
 
-# impor untuk numpy
+# import numpy dan matplotlib
+import matplotlib.pyplot as plt
 import numpy as np
 
-# impor library plot
-from matplotlib import pyplot as plt
-
 # data dasar
-sudut = np.linspace(0, 2 * np.pi, 100)
+i = np.arange(0, 100, 2)
+j = np.arange(0, 100, 3)
+k = np.arange(0, 100, 4)
+print(i)
+print(j)
+print(k)
 
-# koordinat x
-x = 16 * ( np.sin(sudut) ** 3 )
-
-# koordinat y yang merupakan kombinasi 4 sinus beda frekuensi pada sudut sama
-y = 13 * np.cos(sudut) - 5* np.cos(2*sudut) - 2 * np.cos(3*sudut) - np.cos(4*sudut)
-
-# tampilkan
-plt.plot(x, y)
-plt.title('hhhhmmmmmmmmmmmmmmmmm')
+# plotting ke matplotlib
+x1 = i
+x2 = j
+x3 = k
+plt.figure()
+plt.plot(x1, label="Kelipatan 2")
+plt.plot(x2, label="Kelipatan 3")
+plt.plot(x3, label="Kelipatan 4")
+plt.title('Grafik Kelipatan 2, 3, dan 4')
+plt.legend()
 plt.show()
+
